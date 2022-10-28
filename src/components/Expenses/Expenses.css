@@ -5,3 +5,9 @@
   width: 50rem;
   max-width: 95%;
 }
+
+.expenses-not-found {
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+}
