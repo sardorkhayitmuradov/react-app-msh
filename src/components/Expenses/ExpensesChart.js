@@ -12,7 +12,7 @@ const ExpensesChart = (props) => {
       value: 0,
     },
     {
-      label: 'March',
+      label: 'Mar',
       value: 0,
     },
     {
@@ -24,11 +24,11 @@ const ExpensesChart = (props) => {
       value: 0,
     },
     {
-      label: 'June',
+      label: 'Jun',
       value: 0,
     },
     {
-      label: 'July',
+      label: 'Jul',
       value: 0,
     },
     {
@@ -53,11 +53,13 @@ const ExpensesChart = (props) => {
     },
   ];
 
-  for (let expense in props.expenses) {
-    const expenseMonth = expense.date.getMonth()
+  
+  for (let expense of props.expenses) {
+    const expenseMonth = expense.date.getMonth();
+    chartDataPoints[expenseMonth].value += expense.amount
   }
 
-  return <Chart />;
+  return <Chart dataPoints={chartDataPoints} />;
 };
 
 export default ExpensesChart;
